@@ -10,7 +10,7 @@
                     <h2 style="color: white;font-weight: bold;">Create User</h2>
                 </li>
             </ul>
-            <form action="<?= base_url('/user/store') ?>" method="POST">
+            <form action="<?= base_url('/user/store') ?>" method="POST"  enctype="multipart/form-data">
                 <?php if (!empty(session()->getFlashdata('error'))) : ?>
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
                         <h4>Error</h4>
@@ -40,6 +40,10 @@
                     <label for="npm" class="form-label" style="color: white;">NPM</label>
                     <input type="number" class="form-control" id="npm" name="npm">
                 </div>
+
+                <label> Choose the File to upload: </label>
+                 <input type="file" id="foto" name="foto"/> <br /><br />
+
                 <button type="submit" class="btn btn-primary" name="submit">Create</button>
             </form>
         </div>
