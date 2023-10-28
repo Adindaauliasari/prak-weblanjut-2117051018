@@ -15,7 +15,16 @@
     </title>
 </head>
 
-
+<nav class="navbar" style="background-color: #e3f2fd;">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="/kelas/">Kelas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/user/">User</a>
+  </li>
+</div>
+</nav>
 <body>
     <?=$this->renderSection('content')?>
 </body>
