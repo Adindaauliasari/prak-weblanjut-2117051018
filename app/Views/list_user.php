@@ -17,7 +17,7 @@
         <br>
         <br>
         <br>
-    <button type=submit>Tambah Data</button></form>
+        <a class="btn btn-primary custom-button-add" href="<?= base_url('/user/create')?>">Tambah Data</a>
     <br>
         <?php
         foreach ($users as $user){

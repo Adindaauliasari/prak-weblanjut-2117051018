@@ -21,7 +21,7 @@
         <div class="container mx-auto px-5 mt-1" style="margin-bottom: 100px !important;">
             <ul class="p-0 position-relative">
                 <li style="display: inline-block;">
-                    <h2 style="color: white;font-weight: bold;">Create User</h2>
+                    <h2 style="color: white;font-weight: bold;">Edit User</h2>
                 </li>
             </ul>
             <form action="<?= base_url('user/' . $user['id']) ?>" method="POST"  enctype="multipart/form-data">
