@@ -12,7 +12,13 @@
         </tr>
     </thead>
     <tbody>
-    <a href="<?= base_url('/user/create') ?>">Tambah Data</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <button type=submit>Tambah Data</button></form>
+    <br>
         <?php
         foreach ($users as $user){
         ?>
@@ -21,19 +27,15 @@
             <td><?= $user['nama'] ?></td>
             <td><?= $user['npm'] ?></td>
             <td><?= $user['nama_kelas'] ?></td>
-            <td>
-                <form action="<?= base_url('user/' . $user['id']) ?>"method ="GET">
-                <button type="submit">Detail</button></form>
-
-                <form action="<?= base_url('user/' . $user['id'] . '/edit') ?>" method="GET">
-                <button type="submit">edit</button></form>
-
-                <form action="<?= base_url('user/' . $user['id']) ?>" method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <?= csrf_field()?>
-                <button type="submit">Hapus</button>
-                </form>
-            </td>
+            <td class="d-flex justify-content-center">
+                        <a href="<?= base_url('user/'.$user['id']) ?>" class="btn btn-info" style="margin-right: 5px;">Detail</a>
+                        <a href="<?= base_url('user/'.$user['id'].'/edit') ?>" class="btn btn-warning" style="margin-right: 5px;">Edit</a>
+                        <form id="delete-form-<?= $user['id'] ?>" action="<?= base_url('user/'.$user['id']) ?>" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <?= csrf_field() ?>
+                            <button type="button" class="btn btn-danger" onclick="confirmDelete(<?= $user['id'] ?>)">Delete</button>
+                        </form>
+                    </td>
         </tr>
         <?php
         }
